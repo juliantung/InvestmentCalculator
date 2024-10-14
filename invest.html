@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S&P 500 Growth Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>S&P 500 Growth Calculator</h1>
+        <div class="calculator-and-graph">
+            <form id="calculator-form">
+                <label for="initialInvestment">Initial Investment ($):</label>
+                <input type="number" id="initialInvestment" placeholder="e.g. 10000" required>
+
+                <label for="monthlyInvestment">Monthly Contribution ($):</label>
+                <input type="number" id="monthlyInvestment" placeholder="e.g. 500" required>
+
+                <label for="years">Investment Period (Years):</label>
+                <input type="number" id="years" placeholder="e.g. 5" required>
+
+                <button type="submit">Calculate Growth</button>
+            </form>
+
+            <div id="graph-container">
+                <canvas id="growthChart"></canvas>
+            </div>
+        </div>
+
+        <div id="results">
+            <h2>Results</h2>
+            <div id="lowGrowthResult">
+                <h3>Low Growth (6% per year)</h3>
+                <p>Total Amount: <span id="lowTotal"></span></p>
+                <p>Interest Earned: <span id="lowInterest"></span></p>
+                <p>Average Monthly Increase: <span id="lowAvgMonthly"></span></p>
+                <p>Money Gained Per Year: <span id="lowPerYear"></span></p>
+            </div>
+
+            <div id="realisticGrowthResult">
+                <h3>Realistic Growth (8% per year)</h3>
+                <p>Total Amount: <span id="realisticTotal"></span></p>
+                <p>Interest Earned: <span id="realisticInterest"></span></p>
+                <p>Average Monthly Increase: <span id="realisticAvgMonthly"></span></p>
+                <p>Money Gained Per Year: <span id="realisticPerYear"></span></p>
+            </div>
+
+            <div id="highGrowthResult">
+                <h3>High Growth (10% per year)</h3>
+                <p>Total Amount: <span id="highTotal"></span></p>
+                <p>Interest Earned: <span id="highInterest"></span></p>
+                <p>Average Monthly Increase: <span id="highAvgMonthly"></span></p>
+                <p>Money Gained Per Year: <span id="highPerYear"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
